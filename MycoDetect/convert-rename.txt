@@ -1,0 +1,1 @@
+counter=12; for file in *; do if [ -f "$file" ]; then sips -s format jpeg "$file" --out "fusarium-ear-rot$counter.jpeg"; ((counter++)); fi; done

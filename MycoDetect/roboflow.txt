@@ -1,0 +1,22 @@
+!pip install roboflow
+
+from roboflow import Roboflow
+rf = Roboflow(api_key="k3yczA5d9PctiWwVjnis")
+project = rf.workspace("kumed2024").project("mycodetect")
+version = project.version(7)
+dataset = version.download("tensorflow")
+
+>> Version 4
+/runs/detect/...
+train2 = 10 epochs, box_loss ≈ 1.74
+train3 = 25 epochs, box_loss ≈ 1.26
+train4 = 50 epochs, box_loss ≈ 1.06
+
+>> Version 5 (equalized histogram)
+/runs/detect/...
+train5 = 50 epochs, box_loss ≈ 1.05
+train6 = 100 epochs, box_loss ≈ 0.73
+
+>> Version 6 (lower fusarium, equalized histogram)
+/runs/detect/...
+train7 = 100 epochs, box_loss ≈ 0.75
